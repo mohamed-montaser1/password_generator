@@ -18,7 +18,7 @@ copy_password.onclick = () => {
     alert("Please Generate Password First");
     return;
   }
-  navigator.clipboard.writeText(screen.value).then(() => alert("copied!"))
+  navigator.clipboard.writeText(screen.value).then(() => alert("copied!"));
 };
 
 // generate password
@@ -33,27 +33,62 @@ generate_new_password.onclick = () => {
   let uppercase_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lowercase_string = "abcdefghijklmnopqrstuvwxyz";
   let numbers_string = "1234567890";
-  let symbols_string = "/@!#$%^";
+  let symbols_string = "!@#$%^&*()_|";
 
   let result = "";
+
+  if (!uppercase && !lowercase && !numbers && !symbols) {
+    strength = "Please Enter One Or More";
+    return;
+  }
 
   for (let i = 1; i <= password_length_number; i++) {
     if (uppercase) {
       result +=
         uppercase_string[Math.floor(Math.random() * uppercase_string.length)];
-    } else if (lowercase) {
+    }
+    if (lowercase) {
       result +=
         lowercase_string[Math.floor(Math.random() * lowercase_string.length)];
-    } else if (numbers) {
+    }
+    if (numbers) {
       result +=
         numbers_string[Math.floor(Math.random() * numbers_string.length)];
-    } else if (symbols) {
+    }
+    if (symbols) {
       result +=
         symbols_string[Math.floor(Math.random() * symbols_string.length)];
     }
   }
 
+  result = result.slice(0, result.length / 4);
   screen.value = result;
+
+  if (result.length < 7) {
+    strength = "Too Week";
+    password_strength.classList.add("too-week");
+    password_strength.classList.remove("week");
+    password_strength.classList.remove("medium");
+    password_strength.classList.remove("hard");
+  } else if (result.length >= 7 && result.length < 10) {
+    strength = "Week";
+    password_strength.classList.add("week");
+    password_strength.classList.remove("medium");
+    password_strength.classList.remove("hard");
+    password_strength.classList.remove("too-week");
+  } else if (result.length >= 10 && result.length < 20) {
+    strength = "medium";
+    password_strength.classList.add("medium");
+    password_strength.classList.remove("week");
+    password_strength.classList.remove("hard");
+    password_strength.classList.remove("too-week");
+  } else {
+    strength = "Hard";
+    password_strength.classList.add("hard");
+    password_strength.classList.remove("medium");
+    password_strength.classList.remove("week");
+    password_strength.classList.remove("too-week");
+  }
 
   password_strength.innerText = strength;
 };

@@ -96,6 +96,23 @@ body {
   cursor: pointer;
 }
 
+.password-strength {
+  color: #776fd1;
+}
+
+.password-strength.week,
+.password-strength.too-week {
+  color: tomato;
+}
+
+.password-strength.medium {
+  color: rgb(190, 190, 0);
+}
+
+.password-strength.hard {
+  color: rgb(1, 189, 1);
+}
+
 @media (max-width: 384px) {
   .container h1 {
     font-size: 20px;
@@ -106,11 +123,12 @@ body {
   .container .options li {
     font-size: 14px;
   }
-  .generate-password {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-  }
+}
+
+.generate-password {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
 }

@@ -26,22 +26,35 @@
     <div class="container">
       <h1>Password Generator</h1>
       <div class="password">
-        <input type="text" id="screen" readonly placeholder="Will Password Show Here..."/>
+        <input
+          type="text"
+          id="screen"
+          readonly
+          placeholder="Will Password Show Here..."
+        />
         <button class="copy-text" id="copy-text">
           <i class="uil uil-copy"></i>
         </button>
       </div>
       <div class="password-length">
         <h3>Password Length: <span id="password-length">0</span></h3>
-        <input type="number" id="range-input" placeholder="Enter The Length Of Password...">
+        <input
+          type="number"
+          id="range-input"
+          placeholder="Enter The Length Of Password..."
+        />
       </div>
       <ul class="options">
-        <li>Include uppercase letters <input id="uppercase" type="checkbox" checked /></li>
-        <li>Include lowercase letters <input id="lowercase" type="checkbox" checked /></li>
-        <li>Include numbers letters <input id="numbers" type="checkbox" checked /></li>
-        <li>Include symbols letters <input id="symbols" type="checkbox" checked /></li>
+        <li>
+          Include uppercase letters <input id="uppercase" type="checkbox" />
+        </li>
+        <li>
+          Include lowercase letters <input id="lowercase" type="checkbox" />
+        </li>
+        <li>Include numbers letters <input id="numbers" type="checkbox" /></li>
+        <li>Include symbols letters <input id="symbols" type="checkbox" /></li>
       </ul>
-      <p class="password-strength" id="password-strength"></p>
+      <p class="password-strength" id="password-strength">Please Choose One Or More From Options</p>
       <button class="generate-password" id="generate">Generate password</button>
     </div>
   </body>
