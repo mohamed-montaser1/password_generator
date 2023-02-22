@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons Lib -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Main Javascript File -->
+    <script src="assets/js/app.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <div class="password">
+        <input type="text" id="screen" readonly placeholder="Will Password Show Here..."/>
+        <button class="copy-text" id="copy-text">
+          <i class="uil uil-copy"></i>
+        </button>
+      </div>
+      <div class="password-length">
+        <h3>Password Length: <span id="password-length">0</span></h3>
+        <input type="number" id="range-input" placeholder="Enter The Length Of Password...">
+      </div>
+      <ul class="options">
+        <li>Include uppercase letters <input id="uppercase" type="checkbox" checked /></li>
+        <li>Include lowercase letters <input id="lowercase" type="checkbox" checked /></li>
+        <li>Include numbers letters <input id="numbers" type="checkbox" checked /></li>
+        <li>Include symbols letters <input id="symbols" type="checkbox" checked /></li>
+      </ul>
+      <p class="password-strength" id="password-strength"></p>
+      <button class="generate-password" id="generate">Generate password</button>
+    </div>
+  </body>
+</html>
