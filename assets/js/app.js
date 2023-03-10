@@ -36,6 +36,12 @@ generate_new_password.onclick = () => {
   let symbols_string = "!@#$%^&*()_|";
 
   let result = "";
+  let count = 0;
+
+  if (uppercase) count += 1;
+  if (lowercase) count += 1;
+  if (numbers) count += 1;
+  if (symbols) count += 1;
 
   if (!uppercase && !lowercase && !numbers && !symbols) {
     strength = "Please Enter One Or More";
@@ -61,7 +67,7 @@ generate_new_password.onclick = () => {
     }
   }
 
-  result = result.slice(0, result.length);
+  result = result.slice(0, result.length / count);
   screen.value = result;
 
   if (result.length < 7) {
