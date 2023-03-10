@@ -61,7 +61,7 @@ generate_new_password.onclick = () => {
     }
   }
 
-  result = result.slice(0, result.length / 4);
+  result = result.slice(0, result.length);
   screen.value = result;
 
   if (result.length < 7) {
